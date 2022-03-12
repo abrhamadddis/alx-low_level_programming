@@ -1,25 +1,22 @@
 #include <stdio.h>
+
 /**
- *main -starting function
+ *main - Starting point
  *
- * Return: 0
+ *Return: 0
  *
- * Description: print alphabet in lowercase and uppercase
+ *Description: Prints Alphabet in Lowercase and Uppercase
  */
 
 int main(void)
 {
-char alp;
-for (alp = 'a'; alp <= 'z'; alp++)
-{
-	putchar(alp);
-	putchar('\n');
-}
-for (alp = 'A'; alp <= 'Z'; alp++)
-{
-	putchar(alp);
-	putchar('\n');
-}
-return (0);
-}
+	char alp;
 
+	for (alp = 'a'; alp <= 'z'; alp++)
+	putchar(alp);
+	for (alp = 'A'; alp <= 'Z'; alp++)
+	putchar(alp);
+	putchar('\n');
+
+	return (0);
+}
