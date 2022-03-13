@@ -1,17 +1,19 @@
 #include <stdio.h>
 /**
- *main - starting point
- * Return: 0
+ *main - Starting point
  *
- * Discripition: a progrma that print a single digit numbers of base 10
+ *Return: zero
+ *
+ *Descripitions: Prints single digit number
  */
+
 int main(void)
 {
-int bu;
-	for (bu = 0; bu < 10; bu++)
+	int num;
+
+	for (num = 0; num <= 9; num++)
 	{
-		printf("%d", bu);
-		printf("\n");
+	printf("%d", num);
 	}
-return (0);
+	return (0);
 }
