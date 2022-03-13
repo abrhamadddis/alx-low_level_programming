@@ -1,18 +1,20 @@
 #include <stdio.h>
+
 /**
- * main starting function
+ *main - Starting point
  *
- * Return: 0
+ *Return: 0
  *
- * Descripition: a program that print the lowercase alphabet in reverse order
+ *Descripitions: Prints Alphabet in Lowercase reverse
  */
+
 int main(void)
 {
-char alp;
-for (alp = 'z'; alp >= 'a'; alp--)
-{
+	char alp;
+
+	for (alp = 'z'; alp >= 'a'; alp--)
 	putchar(alp);
 	putchar('\n');
-}
-return (0);
+
+	return (0);
 }
