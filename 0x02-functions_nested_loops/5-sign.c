@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_sign -pritn the sign of the number
- * @n: type int interger, can be negatvie or positive
- * Description: print +, 0, or -depending on number, along with return
- * Return: 1 if num is postive 0 if the num is 0 -1 if the num is negatvie
+ * print_sign - Print the sign of a number
+ * @n: type int integer, can be negative or positive
+ * Description: print +, 0, or - depending on number, along with return
+ * Return: 1 if +, 0 if 0, and -1 if -
  */
 
 int print_sign(int n)
@@ -21,8 +21,7 @@ int print_sign(int n)
 	}
 	else
 	{
-		_putcahr('0');
+		_putchar('0');
 		return (0);
 	}
 }
-
