@@ -8,7 +8,7 @@
  * Return: nothing
  */
 
-void print_square(int size)
+void print_square(int n)
 {
 	int i;
 
@@ -16,11 +16,11 @@ void print_square(int size)
 
 	if (n > 0)
 	{
-		for (i = 0; i <= size; i++)
+		for (i = 0; i <= n; i++)
 		{
-			for (j = 0; j <= size; j++)
+			for (j = 0; j <= n; j++)
 			{
-				_Putchar(35);
+				_Putchar('#');
 			}
 			_putchar('\n');
 		}
