@@ -20,7 +20,7 @@ void print_line(int n)
 		{
 			_putchar(32);
 		}
-		_putchar('\\');
+		_putchar(92);
 	_putchar('\n');
 	}
 	}
