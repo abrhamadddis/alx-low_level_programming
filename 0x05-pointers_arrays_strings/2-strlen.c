@@ -1,12 +1,10 @@
-#include "main.h"
-
+include "main.h"
 /**
- * _strlen - prints the size of string
- *
- * @s: input string:
- *
- * Return: nothing
+ *_strlen - Returns the length of a string
+ *@str: Input string
+ *Return: Length of string
  */
+
 int _strlen(char *str)
 {
 	int len = 0;
