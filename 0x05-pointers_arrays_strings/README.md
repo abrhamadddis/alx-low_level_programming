@@ -1,0 +1,1 @@
+This is a low level programming projedt  that foucs on pointer and how to use them.
