@@ -7,7 +7,14 @@
  *
  * Return: nothing
  */
-int _strlen(char *s)
+int _strlen(char *str)
 {
-	_putchar('%ul', sizeof(*s));
+	int len = 0;
+
+	while (*str != '\0')
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }
