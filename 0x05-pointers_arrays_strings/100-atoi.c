@@ -8,17 +8,28 @@
  */
 int _atoi(char *s)
 {
-	int i;
+	int sign = 1;
+	unsigned int total = 0;
+	char null_flag = 0;
 
-	while (s[i] != '\0')
+	while (*s)
 	{
-		i++;
-	}
-	int j;
+		if (*s == '-')
+			sign *= -1;
 
-	for (j = 0; j <= i; j++)
-	{
-		atoi[j] = s[i];
+		if (*s >= '0' && *s <= '9')
+		{
+			null_flag = 1;
+			total = total * 10 + *s - '0';
+		}
+
+		else if (null_flag)
+			break;
+		s++;
 	}
-	return (atoi);
+
+	if (sign < 0)
+		total = (-total);
+
+	return (total);
 }
