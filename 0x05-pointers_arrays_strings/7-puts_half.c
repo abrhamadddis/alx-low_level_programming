@@ -20,7 +20,7 @@ void puts_half(char *str)
 	{
 		i = (i + 1) / 2;
 
-		for (; str[i] != '\0';)
+		while (str[i] != '\0')
 		{
 			_putchar(str[i++]);
 		}
@@ -30,7 +30,7 @@ void puts_half(char *str)
 	{
 		i /= 2;
 
-		for (; str[i] != '\0';)
+		while (str[i] != '\0')
 		{
 			_putchar(str[i++]);
 		}
