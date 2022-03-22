@@ -23,6 +23,7 @@ void puts_half(char *str)
 				_putchar(str[n]);
 				n++;
 			}
+		_putchar(10);
 		}
 		else
 		{
@@ -34,7 +35,7 @@ void puts_half(char *str)
 				_putchar(str[j]);
 				j++;
 			}
+		_putchar(10);
 		}
 	}
-	_putchar(10);
 }
