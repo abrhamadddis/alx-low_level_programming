@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strepy - function that copies the string pointed by src
+ * _strcpy - function that copies the string pointed by src
  *
  * @src: char pointer variable
  *
