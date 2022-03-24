@@ -1,11 +1,9 @@
-#include "main.c"
+#include "main.h"
 
 /**
- * rot13 -is a function that encodes a string using rot13
- *i
- * @s: input string
- *
- * Return: decoded string
+ * rot13 -  a function that encodes a string using rot13.
+ * @s: An input string to encode using rot13
+ * Return: An encode string
  */
 char *rot13(char *s)
 {

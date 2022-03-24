@@ -1,11 +1,9 @@
-#incude "main.h"
+#include "main.h"
 
 /**
- * leet - a function that encodes a string in to 1337
- *
+ * leet - a function that encodes a string into 1337.
  * @s: an input string to encode
- *
- * Return: an encode string
+ * Return: An encode string
  */
 char *leet(char *s)
 {
