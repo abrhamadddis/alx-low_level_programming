@@ -2,8 +2,8 @@
 
 /**
  * rot13 -is a function that encodes a string using rot13
- *
- * @: input string
+ *i
+ * @s: input string
  *
  * Return: decoded string
  */
