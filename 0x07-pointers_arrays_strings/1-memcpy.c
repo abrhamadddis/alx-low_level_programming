@@ -9,20 +9,19 @@
  *
  * Return: pointer to dest
  */
-char *_memcpy(char *dest, char src, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	int i;
 
-	char *pointer;
-
-	pointer = dest;
-	for (i = 0; i <= n; i++)
+	i = 0;
+	while (n > 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		s[i] = b;
+		i++;
+		n--;
 	}
-	return (pointer);
+
+	return (s);
 }
 
 
