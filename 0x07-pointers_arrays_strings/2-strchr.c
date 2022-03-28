@@ -9,30 +9,17 @@
  *
  * Return: null if char not found, or pointer to first occurrence of char 'c'
  */
+
 char *_strchr(char *s, char c)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == 'c')
-		{
-			int j;
-
-			j = i;
-			while (s[j] != '\0')
-			{
-				return (s[j]);
-				j++;
-			}
-		}
-		else
-		{
-			int ptr = NULL;
-
-			return (ptr);
-		}
-		i++;
+		if (*s == c)
+			return (s);
+		else if (*(s + 1) == c)
+			return (s + 1);
+		s++;
 	}
+
+	return (s + 1);
 }
