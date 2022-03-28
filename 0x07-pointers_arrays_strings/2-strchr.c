@@ -29,7 +29,9 @@ char *_strchr(char *s, char c)
 		}
 		else
 		{
-			return (NULL);
+			int ptr = NULL;
+
+			return (ptr);
 		}
 		i++;
 	}
