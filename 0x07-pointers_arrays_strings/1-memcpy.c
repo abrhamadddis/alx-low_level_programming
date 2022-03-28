@@ -5,23 +5,26 @@
  *
  * @dest: char array to copy into
  *
- * @src: number of elements to copy
+ * @src: char array to copy from
+ *
+ * @n: number of elements to copy
  *
  * Return: pointer to dest
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	char *yolo;
 
-	i = 0;
+	yolo = dest;
 	while (n > 0)
 	{
-		s[i] = b;
-		i++;
+		*dest = *src;
+		dest++;
+		src++;
 		n--;
 	}
 
-	return (s);
+	return (yolo);
 }
 
 
