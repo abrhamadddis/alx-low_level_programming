@@ -1,21 +1,15 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - A program that return the product two number
- *
+ * main - A program that multiplies two numbers
  * @argc: The arguments' counter
- *
  * @argv: The arguments' values
- *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(int argc, char **argv)
 {
-	int pro = 1;
-
-	int x, y;
+	int num1, num2, result;
 
 	if (argc != 3)
 	{
@@ -24,10 +18,10 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		x = atoi(argv[1]);
-		y = atoi(argv[2]);	
-		pro = x * y;
-		printf("%d\n", pro);
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
+		result = num1 * num2;
+		printf("%d\n", result);
+		return (0);
 	}
-	return (0);
 }

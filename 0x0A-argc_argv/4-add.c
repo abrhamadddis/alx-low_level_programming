@@ -1,15 +1,12 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - A program that return the sum two number
- *
+ * main - A program that adds positive numbers
  * @argc: The arguments' counter
- *
- * @argv: The arguments' values
- *
- * Return: Always 0 (success)
+ * @argv: The argument's values
+ * Return: Always 0 (Success)
  */
 int main(int argc, char **argv)
 {
