@@ -4,12 +4,12 @@
 /**
  * _puts - function that prints a string, followed by a new line, to stdout.
  *
- * @str: char pointer variable
+ * @s: char pointer variable
  *
  * Return: nothing
  */
 
 void _puts(char *s)
 {
-	printf("%s\n", s);
+	 printf("%s\n", s);
 }
