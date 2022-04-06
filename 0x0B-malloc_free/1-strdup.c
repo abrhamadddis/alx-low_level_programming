@@ -5,7 +5,7 @@
  * _strdup - a function returns a pointer to new string
  *
  * @str: input string
- * 
+ *
  * Return: pointer
  */
 char *_strdup(char *str)
@@ -13,14 +13,15 @@ char *_strdup(char *str)
 	int i, j;
 
 	char *s;
+
 	i = 0;
 	j = 0;
 
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		i++;
 	}
-	s = malloc(i * sizeof(char));
+	s = malloc((i + 1) * sizeof(char));
 	if (s == NULL)
 	{
 		return (NULL);
