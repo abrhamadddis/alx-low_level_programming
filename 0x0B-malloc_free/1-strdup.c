@@ -17,16 +17,16 @@ char *_strdup(char *str)
 	i = 0;
 	j = 0;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	while (str[i])
 	{
 		i++;
 	}
 	s = malloc((i + 1) * sizeof(char));
 	if (s == NULL)
-	{
-		return (NULL);
-	}
-	else if (str == NULL)
 	{
 		return (NULL);
 	}
@@ -37,7 +37,7 @@ char *_strdup(char *str)
 			s[j] = str[j];
 			j++;
 		}
-		return (s);
 	}
+	return (s);
 }
 
