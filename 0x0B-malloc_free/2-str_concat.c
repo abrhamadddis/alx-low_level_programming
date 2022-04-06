@@ -1,53 +1,43 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * str_concat - a function that concatenates two stringds
- *
- * @s1: input string
- *
- * @s2: inpput string
- *
- * Return: ponter to concatenated string
+ **str_concat - Concatenates two strings
+ *@s1: First string
+ *@s2: Second string
+ *Return: (NULL) on failur or ponter
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, k;
+	unsigned int len1, len2, i;
+	char *x;
 
-	char *str;
+	len1 = 0;
+	len2 = 0;
+	if (s1)
+	{
+		while (s1[len1])
+			len1++;
+	}
+	if (s2)
+	{
+		while (s2[len2])
+			len2++;
+	}
 
-	i = 0;
-	k = 0;
-	j = 0;
-
-	if ((s1 == NULL) && (s2 == NULL))
+	x = malloc((len1 + len2 + 1) * sizeof(char));
+	if (x == NULL)
 	{
 		return (NULL);
 	}
-	while (s1[i])
+	for (i = 0; i < len1; i++)
 	{
-		i++;
+		x[i] = s1[i];
 	}
-	while (s2[j])
+	for (i = 0; i < len2; i++)
 	{
-		j++;
+		x[len1 + i] = s2[i];
 	}
-	str = malloc((i + j + 1) * sizeof(char));
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-	while (k < i)
-	{
-		str[k] = s1[k];
-		k++;
-	}
-	while (k < j)
-	{
-		str[k + i] = s2[k];
-		k++;
-	}
-	str[i + j] = '\0';
-	return (str);
+	x[len1 + len2] = '\0';
+	return (x);
 }
