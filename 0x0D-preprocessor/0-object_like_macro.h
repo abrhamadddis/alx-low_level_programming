@@ -3,4 +3,4 @@
 
 #define SIZE 1024
 
-#endif // HEADER_FILE
+#endif /* HEADER_FILE */
