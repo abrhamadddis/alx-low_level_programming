@@ -1,80 +1,46 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "dog.h"
-
+#include <stdlib.h>
 /**
- * _strlen - return length of a string
- *
- * @s: char type
- * Return:  length of string
- */
-
-int _strlen(char *s)
-{
-	int a;
-
-	for (a = 0; s[a] != '\0'; a++)
-	{
-
-	}
-	return (a);
-}
-/**
- * _strcpy - function to copy string from source to destination
- *@dest: pointer to destinatioin of string to be copied
- *@src: pointer to source of string to be copied
- * Return: return the value at dest
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int a;
-
-	for (a = 0; src[a] != '\0'; a++)
-	{
-		dest[a] = src[a];
-	}
-	dest[a] = '\0';
-	return (dest);
-}
-/**
- * *new_dog - function to create new dog struct
- * @name: char type
- * @age: float type
- * @owner: char type
- * Return: Always success
+ **new_dog - Creates a new dog
+ *@name: Input dog name
+ *@age: Input dog age
+ *@owner: Input owner
+ *Return: pointer or NULL
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newd;
+	unsigned int nl, ol, i;
+	dog_t *dog;
 
-	newd = malloc(sizeof(struct dog));
-	if (newd == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
-
-	if (name == NULL)
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+	for (nl = 0; name[nl]; nl++)
+		;
+	nl++;
+	dog->name = malloc(nl * sizeof(char));
+	if (dog->name == NULL)
 	{
-		free(newd);
+		free(dog);
 		return (NULL);
 	}
-	newd->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (newd->name == NULL)
-		return (NULL);
-	_strcpy(newd->name, name);
-
-	newd->age = age;
-
-	if (owner == NULL)
+	for (i = 0; i < nl; i++)
+		dog->name[i] = name[i];
+	dog->age = age;
+	for (ol = 0; owner[ol]; ol++)
+		;
+	ol++;
+	dog->owner = malloc(ol * sizeof(char));
+	if (dog->owner == NULL)
 	{
-		free(newd->owner);
-		free(newd);
+		free(dog->name);
+		free(dog);
 		return (NULL);
 	}
-	newd->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (newd->owner == NULL)
-		return (NULL);
-	_strcpy(newd->owner, owner);
-
-	return (newd);
+	for (i = 0; i < ol; i++)
+		dog->owner[i] = owner[i];
+	return (dog);
 }
