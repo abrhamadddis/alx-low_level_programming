@@ -1,59 +1,54 @@
 #include "lists.h"
-/**
- * insert_dnodeint_at_index - function to insert node at given index
- * @h: double pointer type to head of list
- * @idx: index at which node will be added
- * @n: int type for data to be added
- * Return: node if successful, NULL if failed
- */
+#include <stdlib.h>
 
+/**
+ * insert_dnodeint_at_index - inserts a new node at a given position
+ * @h: pointer to the pointer to the DLL
+ * @idx: index of the list where the new node should be added, starts at 0
+ * @n: data to be set for the new node
+ *
+ * Return: the address of the new added node, NULL otherwise
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *node = malloc(sizeof(dlistint_t));
-	dlistint_t *temp;
-	unsigned int count = 0;
+	dlistint_t *current, *new;
+	unsigned int i;
 
-	if (node == NULL)
+	if (h == NULL)
 		return (NULL);
-	node->n = n;
-	node->prev = NULL;
-	node->next = NULL;
 
-	if (*h == NULL)
-	{
-		*h = node;
-		node->next = NULL;
-		return (node);
-	}
-	temp = *h;
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+
 	if (idx == 0)
 	{
-		node->next = temp;
-		temp->prev = node;
-		*h = node;
-		return (node);
+		free(new);
+		return (add_dnodeint(h, n));
 	}
-
-	while (count != (idx - 1))
+	current = *h;
+	while (current->prev != NULL)
+		current = current->prev;
+	for (i = 0; (current != NULL) && (i < idx - 1); i++)
+		current = current->next;
+	if (current == NULL)
 	{
-		temp = temp->next;
-		count++;
-		if (temp == NULL)
-		{
-			free(node);
-			return (NULL);
-		}
+		free(new);
+		return (NULL);
 	}
-	node->next = temp->next;
-	node->prev = temp;
-	if (temp->next == NULL)
+	if (current->next == NULL)
 	{
-		temp->next = node;
+		new->next = NULL;
+		new->prev = current;
+		current->next = new;
 	}
 	else
 	{
-		temp->next->prev = node;
-		temp->next = node;
+		new->next = current->next;
+		new->prev = current;
+		(current->next)->prev = new;
+		current->next = new;
 	}
-	return (node);
+	return (new);
 }

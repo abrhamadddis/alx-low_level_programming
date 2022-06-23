@@ -1,26 +1,26 @@
 #include "lists.h"
-/**
- * get_dnodeint_at_index - function to get the node at index
- * @head: pointer of dlistint_t type to head of list
- * @index: unsigned int type for number of index
- * Return: node at inded if successful, NULL if failed
- */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
-{
-	dlistint_t *temp;
-	unsigned int count = 0;
+#include <stdlib.h>
 
+/**
+ * free_dlistint - frees a dlistint_t list.
+ * @head: pointer to the dll
+ *
+ * Return: void, nth
+ */
+void free_dlistint(dlistint_t *head)
+{
 	if (head == NULL)
-		return (NULL);
-	while (head != NULL)
+		return;
+	while (head->prev != NULL)
+		head = head->prev;
+	while (1)
 	{
-		if (count == index)
+		if (head->next == NULL)
 		{
-			temp = head;
-			return (temp);
+			free(head);
+			return;
 		}
-		count++;
 		head = head->next;
+		free(head->prev);
 	}
-	return (NULL);
 }

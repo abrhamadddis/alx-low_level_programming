@@ -1,19 +1,26 @@
 #include "lists.h"
+#include <stdlib.h>
+
 /**
- * free_dlistint - function to free allocated memory on heap
- * @head: pointer to head of doubly linked list
+ * free_dlistint - frees a dlistint_t list.
+ * @head: pointer to the dll
  *
+ * Return: void, nth
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *temp;
-
 	if (head == NULL)
 		return;
-	while (head != NULL)
+	while (head->prev != NULL)
+		head = head->prev;
+	while (1)
 	{
-		temp = head;
+		if (head->next == NULL)
+		{
+			free(head);
+			return;
+		}
 		head = head->next;
-		free(temp);
+		free(head->prev);
 	}
 }
